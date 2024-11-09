@@ -1,6 +1,9 @@
 # Local .terraform directories
 .terraform/
 
+# Ignore Terraform provider binaries for specific versions and platforms
+**/.terraform/providers/registry.terraform.io/hashicorp/azurerm/*
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
