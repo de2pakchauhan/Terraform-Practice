@@ -5,12 +5,14 @@
 **/.terraform/providers/registry.terraform.io/hashicorp/azurerm/*
 
 # Ignore .DS_Store files
-.DS_Store
+.DS_Store*
 
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+dev/terraform.tfstate
+dev/terraform.tfstate.backup       
 
 # Crash log files
 crash.log
