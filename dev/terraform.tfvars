@@ -9,7 +9,6 @@ rg = {
   rg1 = {
     name     = "dc_res"
     location = "eastasia"
-    # Testing branch feature/deepak
   }
 }
 
