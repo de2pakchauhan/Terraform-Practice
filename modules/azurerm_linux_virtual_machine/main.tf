@@ -71,7 +71,7 @@ data "azurerm_resource_group" "resource_group" {
 }
 
 data "azurerm_key_vault" "key_vault" {
-  name                = "key-vaultDC"
+  name                = "key-vaultDev"
   resource_group_name = "key_res"
 }
 
