@@ -1,6 +1,6 @@
 features = {
-  bastion_enable       = false
-  publicip_enable      = true
+  bastion_enable       = true
+  publicip_enable      = false
   load_balancer_enable = true
   key_vault_enable     = true
 }
