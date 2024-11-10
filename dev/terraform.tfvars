@@ -10,6 +10,10 @@ rg = {
     name     = "dc_res"
     location = "eastasia"
   }
+  rg2 = {
+    name     = "key_res"
+    location = "eastasia"
+  }
 }
 
 vnet = {
