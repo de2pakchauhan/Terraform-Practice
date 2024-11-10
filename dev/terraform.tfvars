@@ -2,7 +2,7 @@ features = {
   bastion_enable       = false
   publicip_enable      = true
   load_balancer_enable = true
-  key_vault_enable     = false
+  key_vault_enable     = true
 }
 
 rg = {
