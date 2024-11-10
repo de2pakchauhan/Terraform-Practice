@@ -5,7 +5,7 @@ data "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_key_vault" "key_vault" {
-  name                        = "dckey-vault"
+  name                        = "key-vaultDC"
   location                    = data.azurerm_resource_group.resource_group.location
   resource_group_name         = data.azurerm_resource_group.resource_group.name
   enabled_for_disk_encryption = true

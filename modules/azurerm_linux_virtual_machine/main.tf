@@ -61,7 +61,7 @@ resource "azurerm_network_security_group" "nsg" {
 }
 
 resource "azurerm_network_interface_security_group_association" "nsg_association" {
-  for_each = var.vm_details
+  for_each                  = var.vm_details
   network_interface_id      = azurerm_network_interface.network_interface[each.key].id
   network_security_group_id = azurerm_network_security_group.nsg[each.key].id
 }
@@ -71,7 +71,7 @@ data "azurerm_resource_group" "resource_group" {
 }
 
 data "azurerm_key_vault" "key_vault" {
-  name                = "dckey-vault"
+  name                = "key-vaultDC"
   resource_group_name = "key_res"
 }
 
@@ -79,6 +79,8 @@ resource "random_password" "vm_password" {
   for_each         = var.vm_details
   length           = 16
   special          = true
+  lower            = true
+  upper            = true
   override_special = "_%@"
 }
 
