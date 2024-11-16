@@ -30,10 +30,10 @@ variable "features" {
 
 }
 
-module "rg" {
-  source     = "../modules/azurerm_resource_group"
-  rg_details = var.rg
-}
+  module "rg" {
+    source     = "../modules/azurerm_resource_group"
+    rg_details = var.rg
+  }
 
 module "vnet" {
   depends_on   = [module.rg]
