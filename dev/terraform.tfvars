@@ -36,14 +36,14 @@ vnet = {
   }
 }
 
-subnet = {
-  subnet1 = {
-    name                 = "subnet"
-    resource_group_name  = "dc_res"
-    virtual_network_name = "dc_vnet"
-    address_prefixes     = ["10.0.1.0/24"]
+# subnet = {
+#   subnet1 = {
+#     name                 = "subnet"
+#     resource_group_name  = "dc_res"
+#     virtual_network_name = "dc_vnet"
+#     address_prefixes     = ["10.0.1.0/24"]
 
-  }
+#   }
   # subnet2 = {
   #   name                 = "dcbackend"
   #   resource_group_name  = "dc_res"
@@ -51,14 +51,14 @@ subnet = {
   #   address_prefixes     = ["10.0.2.0/24"]
 
   # }
-  subnet3 = {
-    name                 = "AzureBastionSubnet"
-    resource_group_name  = "dc_res"
-    virtual_network_name = "dc_vnet"
-    address_prefixes     = ["10.0.3.0/26"]
+#   subnet3 = {
+#     name                 = "AzureBastionSubnet"
+#     resource_group_name  = "dc_res"
+#     virtual_network_name = "dc_vnet"
+#     address_prefixes     = ["10.0.3.0/26"]
 
-  }
-}
+#   }
+# }
 
 virtual_machine = {
   vm1 = {
