@@ -42,15 +42,15 @@ module "vnet" {
 
 }
 
-module "subnet" {
-  depends_on     = [module.vnet]
-  source         = "../modules/azurerm_subnet"
-  subnet_details = var.subnet
+# module "subnet" {
+#   depends_on     = [module.vnet]
+#   source         = "../modules/azurerm_subnet"
+#   subnet_details = var.subnet
 
-}
+# }
 
 module "virtual_machine" {
-  depends_on      = [module.subnet, module.key_vault]
+  depends_on      = [module.vnet, module.key_vault]
   source          = "../modules/azurerm_linux_virtual_machine"
   vm_details      = var.virtual_machine
   publicip_enable = var.features.publicip_enable
