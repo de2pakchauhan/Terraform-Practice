@@ -6,9 +6,9 @@ variable "vnet" {
 
 }
 
-variable "subnet" {
+# variable "subnet" {
 
-}
+# }
 
 variable "virtual_machine" {
 
