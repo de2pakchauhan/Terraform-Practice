@@ -25,12 +25,12 @@ vnet = {
 
     subnets = {
       subnet1 = {
-        name             = "subnet"
+        name             = "subnet1"
         address_prefixes = ["10.0.1.0/24"]
       }
       subnet2 = {
-        name             = "AzureBastionSubnet"
-        address_prefixes = ["10.0.3.0/24"]
+        name             = "subnet2"
+        address_prefixes = ["10.0.2.0/24"]
       }
     }
   }
@@ -44,13 +44,13 @@ vnet = {
 #     address_prefixes     = ["10.0.1.0/24"]
 
 #   }
-  # subnet2 = {
-  #   name                 = "dcbackend"
-  #   resource_group_name  = "dc_res"
-  #   virtual_network_name = "dc_vnet"
-  #   address_prefixes     = ["10.0.2.0/24"]
+# subnet2 = {
+#   name                 = "dcbackend"
+#   resource_group_name  = "dc_res"
+#   virtual_network_name = "dc_vnet"
+#   address_prefixes     = ["10.0.2.0/24"]
 
-  # }
+# }
 #   subnet3 = {
 #     name                 = "AzureBastionSubnet"
 #     resource_group_name  = "dc_res"
@@ -97,6 +97,7 @@ bastion_host = {
     resource_group_name  = "dc_res"
     location             = "eastasia"
     publicip_name        = "bastionpublicip"
+    address_prefixes     = ["10.0.3.0/26"]
 
   }
 }

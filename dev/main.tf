@@ -6,10 +6,6 @@ variable "vnet" {
 
 }
 
-# variable "subnet" {
-
-# }
-
 variable "virtual_machine" {
 
 }
@@ -42,12 +38,6 @@ module "vnet" {
 
 }
 
-# module "subnet" {
-#   depends_on     = [module.vnet]
-#   source         = "../modules/azurerm_subnet"
-#   subnet_details = var.subnet
-
-# }
 
 module "virtual_machine" {
   depends_on      = [module.vnet, module.key_vault]
