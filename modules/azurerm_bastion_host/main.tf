@@ -1,9 +1,17 @@
-data "azurerm_subnet" "data_subnet" {
-  for_each             = var.bastion_details
+# data "azurerm_subnet" "data_subnet" {
+#   for_each             = var.bastion_details
+#   name                 = "AzureBastionSubnet"
+#   virtual_network_name = each.value.virtual_network_name
+#   resource_group_name  = each.value.resource_group_name
+# }
+
+resource "azurerm_subnet" "bastion_subnet" {
   name                 = "AzureBastionSubnet"
-  virtual_network_name = each.value.virtual_network_name
   resource_group_name  = each.value.resource_group_name
-}
+  virtual_network_name = each.value.virtual_network_name
+  address_prefixes     = each.value.address_prefixes
+
+} 
 
 resource "azurerm_public_ip" "public_ip" {
   for_each            = var.bastion_details
@@ -21,7 +29,7 @@ resource "azurerm_bastion_host" "bastion_host" {
 
   ip_configuration {
     name                 = "configuration"
-    subnet_id            = data.azurerm_subnet.data_subnet[each.key].id
+    subnet_id            = azurerm_subnet.bastion_subnet[each.key].id
     public_ip_address_id = azurerm_public_ip.public_ip[each.key].id
   }
 }
