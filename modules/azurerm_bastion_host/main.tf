@@ -1,17 +1,11 @@
-# data "azurerm_subnet" "data_subnet" {
-#   for_each             = var.bastion_details
-#   name                 = "AzureBastionSubnet"
-#   virtual_network_name = each.value.virtual_network_name
-#   resource_group_name  = each.value.resource_group_name
-# }
-
 resource "azurerm_subnet" "bastion_subnet" {
+  for_each             = var.bastion_details
   name                 = "AzureBastionSubnet"
   resource_group_name  = each.value.resource_group_name
   virtual_network_name = each.value.virtual_network_name
   address_prefixes     = each.value.address_prefixes
 
-} 
+}
 
 resource "azurerm_public_ip" "public_ip" {
   for_each            = var.bastion_details

@@ -1,7 +1,7 @@
 features = {
-  bastion_enable       = true
-  publicip_enable      = false
-  load_balancer_enable = true
+  bastion_enable       = false
+  publicip_enable      = true
+  load_balancer_enable = false
   key_vault_enable     = true
 }
 
@@ -11,7 +11,7 @@ rg = {
     location = "eastasia"
   }
   rg2 = {
-    name     = "key_res"
+    name     = "key_vault"
     location = "eastasia"
   }
 }
@@ -62,7 +62,7 @@ vnet = {
 
 virtual_machine = {
   vm1 = {
-    subnet_name          = "subnet"
+    subnet_name          = "subnet1"
     virtual_network_name = "dc_vnet"
     resource_group_name  = "dc_res"
     location             = "eastasia"
@@ -76,7 +76,7 @@ virtual_machine = {
 
   }
   vm2 = {
-    subnet_name          = "subnet"
+    subnet_name          = "subnet2"
     virtual_network_name = "dc_vnet"
     resource_group_name  = "dc_res"
     location             = "eastasia"

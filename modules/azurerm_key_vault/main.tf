@@ -1,11 +1,11 @@
 data "azurerm_client_config" "current" {}
 
 data "azurerm_resource_group" "resource_group" {
-  name = "key_res"
+  name = "key_vault"
 }
 
 resource "azurerm_key_vault" "key_vault" {
-  name                        = "key-vaultDev"
+  name                        = "dc-vm-vault"
   location                    = data.azurerm_resource_group.resource_group.location
   resource_group_name         = data.azurerm_resource_group.resource_group.name
   enabled_for_disk_encryption = true
