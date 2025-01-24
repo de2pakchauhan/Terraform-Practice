@@ -33,7 +33,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ${{ github.workspace }}/Terraform-Practice
+        working-directory: ${{ github.workspace }}
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
