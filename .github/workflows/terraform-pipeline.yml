@@ -18,8 +18,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Print GitHub Workspace Path
+        run: |
+          echo "GitHub Workspace: ${{ github.workspace }}"
+
       - name: Print Working Directory
-        run: echo "Working Directory: ${{ github.workspace }}/dev"
+        run: |
+          echo "Working Directory: ${{ github.workspace }}/dev"
 
       - name: Authenticate with Azure using Federated Credentials
         uses: azure/login@v1
