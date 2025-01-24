@@ -18,6 +18,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Print Working Directory
+        run: echo "Working Directory: ${{ github.workspace }}/dev"
+
       - name: Authenticate with Azure using Federated Credentials
         uses: azure/login@v1
         with:
@@ -33,13 +36,18 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ${{ github.workspace }}
+        working-directory: ${{ github.workspace }}/dev
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: ${{ github.workspace }}/dev
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
+        working-directory: ${{ github.workspace }}/dev
 
       - name: Upload Terraform Plan Artifact
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: tfplan
+          path: dev/tfplan
