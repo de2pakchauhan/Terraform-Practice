@@ -44,8 +44,6 @@ module "virtual_machine" {
   source          = "../modules/azurerm_linux_virtual_machine"
   vm_details      = var.virtual_machine
   publicip_enable = var.features.publicip_enable
-
-
 }
 
 module "bastion_host" {
@@ -53,7 +51,6 @@ module "bastion_host" {
   depends_on      = [module.virtual_machine]
   source          = "../modules/azurerm_bastion_host"
   bastion_details = var.bastion_host
-
 }
 
 module "loadbalancer" {
