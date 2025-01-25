@@ -38,7 +38,6 @@ module "vnet" {
 
 }
 
-
 module "virtual_machine" {
   depends_on      = [module.vnet, module.key_vault]
   source          = "../modules/azurerm_linux_virtual_machine"
